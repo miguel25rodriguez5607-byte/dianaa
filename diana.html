@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>3DTS Bachillerato “B” - Nuestra Amistad</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #fff8c9, #ffe5b5, #ffd6d0);
+    color: #654333;
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, #f9df72, #ffc58c, #f5aaa0);
+    color: #70452d;
+    text-align: center;
+    padding: 65px 20px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+header h1 {
+    font-size: 48px;
+    font-family: Georgia, serif;
+    margin-bottom: 15px;
+}
+
+header h2 {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+header p {
+    font-size: 18px;
+    margin-top: 15px;
+}
+
+nav {
+    background: #fffdf1;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 3px 12px #8d5b2b22;
+}
+
+nav a {
+    color: #b86d38;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 8px;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: #d66e62;
+}
+
+section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 35px 25px;
+    background: #fffdf4ee;
+    border-radius: 28px;
+    box-shadow: 0 5px 20px #a66b3022;
+}
+
+h2 {
+    color: #bd713c;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 25px;
+    font-family: Georgia, serif;
+}
+
+p {
+    font-size: 17px;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.presentacion {
+    text-align: center;
+    background: linear-gradient(135deg, #fff1a8, #ffd9a7);
+    padding: 30px;
+    border-radius: 25px;
+}
+
+.presentacion h3 {
+    font-size: 27px;
+    color: #b85d36;
+    margin-bottom: 15px;
+}
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.tarjeta {
+    background: linear-gradient(135deg, #fff3b0, #ffd4b8);
+    padding: 25px;
+    border-radius: 22px;
+    text-align: center;
+    border: 2px solid #f5c87e;
+}
+
+.tarjeta h3 {
+    color: #b9663e;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.tarjeta p {
+    text-align: center;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.foto-card {
+    background: #fff0d0;
+    padding: 15px;
+    border-radius: 22px;
+    text-align: center;
+}
+
+.foto {
+    background: #fff1c2;
+    border: 2px dashed #e6a66c;
+    border-radius: 22px;
+    min-height: 210px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 15px;
+    color: #b87548;
+    overflow: hidden;
+}
+
+.foto img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+}
+
+.foto-card h3 {
+    color: #b9663e;
+    margin-top: 10px;
+}
+
+.recuerdo {
+    background: linear-gradient(135deg, #fff4b5, #ffd8c5);
+    padding: 25px;
+    border-radius: 22px;
+    margin-bottom: 20px;
+    border-left: 6px solid #e5a052;
+}
+
+.recuerdo h3 {
+    color: #b85d36;
+    margin-bottom: 10px;
+}
+
+.frase {
+    background: linear-gradient(135deg, #ffeaa7, #ffcfc3);
+    padding: 30px;
+    border-radius: 22px;
+    text-align: center;
+    font-size: 21px;
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #865039;
+}
+
+.videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.video-card {
+    background: #fff0d0;
+    border-radius: 22px;
+    padding: 20px;
+    text-align: center;
+}
+
+.video-card video {
+    width: 100%;
+    border-radius: 15px;
+    max-height: 400px;
+}
+
+.video-card h3 {
+    color: #b9663e;
+    margin-top: 12px;
+}
+
+footer {
+    background: linear-gradient(135deg, #e8a56e, #df8d85);
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 50px;
+}
+
+footer h2 {
+    color: white;
+}
+
+footer p {
+    text-align: center;
+    font-size: 15px;
+}
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 34px;
+    }
+
+    header h2 {
+        font-size: 21px;
+    }
+
+    section {
+        margin: 25px 12px;
+        padding: 25px 18px;
+    }
+
+    h2 {
+        font-size: 27px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PORTADA -->
+
+<header>
+
+    <h1>?? 3DTS Bachillerato “B” ??</h1>
+
+    <h2>La historia de Cami, Yari y Diana</h2>
+
+    <p>
+        Tres chicas, una amistad y muchos recuerdos que guardar ??
+    </p>
+
+</header>
+
+<!-- MENÚ -->
+
+<nav>
+
+    <a href="#nosotras">Nuestra amistad</a>
+    <a href="#historia">Nuestra historia</a>
+    <a href="#aprendizajes">Aprendizajes</a>
+    <a href="#fotos">Fotos</a>
+    <a href="#videos">Videos</a>
+    <a href="#frases">Frases</a>
+
+</nav>
+
+<!-- NUESTRA AMISTAD -->
+
+<section id="nosotras">
+
+    <h2>?? Nuestra amistad ??</h2>
+
+    <div class="presentacion">
+
+        <h3>Yo soy Diana</h3>
+
+        <p>
+        Soy Diana y quise crear esta página para guardar
+        un pequeño pedacito de nuestra historia. Aquí quiero
+        contar cómo somos Cami, Yari y yo, y recordar algunos
+        de los momentos que hemos compartido.
+        </p>
+
+        <p>
+        Para mí, una amistad está formada por confianza,
+        risas, conversaciones, diferencias, aprendizajes
+        y muchos momentos que poco a poco se convierten
+        en recuerdos especiales.
+        </p>
+
+    </div>
+
+    <div class="tarjetas">
+
+        <div class="tarjeta">
+
+            <h3>?? Cami</h3>
+
+            <p>
+            Cami es una persona muy chistosa, noble y respetuosa.
+            También es bastante resentida y un poquito inmadura,
+            pero tiene un corazoncito de niña pequeña que la hace
+            ser especial. Con ella tengo mucha confianza y hemos
+            compartido muchos momentos que recuerdo con cariño.
+            </p>
+
+        </div>
+
+        <div class="tarjeta">
+
+            <h3>?? Yari</h3>
+
+            <p>
+            Yari es una persona más cerrada y desconfiada.
+            Puede parecer un poco fría o amargada, aunque también
+            tiene su lado risueño. Cuando está de buen humor le
+            gusta molestar, ayudar y compartir con las personas
+            que quiere. No confía fácilmente en todo el mundo,
+            y eso también forma parte de su manera de ser.
+            </p>
+
+        </div>
+
+        <div class="tarjeta">
+
+            <h3>?? Diana</h3>
+
+            <p>
+            Yo soy Diana. Me considero una chica alegre y de buen
+            corazón. Me gusta ayudar a los demás, confiar en las
+            personas y abrirme con quienes siento que puedo ser
+            yo misma. A veces he pasado por rupturas de amistad,
+            pero también soy de las personas que saben perdonar
+            y dar otra oportunidad.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HISTORIA -->
+
+<section id="historia">
+
+    <h2>?? Nuestra historia</h2>
+
+    <p>
+    Yo siento que la amistad es una de las cosas más bonitas
+    que podemos encontrar durante el bachillerato. Entre clases,
+    conversaciones, risas y momentos inesperados, vamos
+    conociendo personas que poco a poco se vuelven importantes
+    en nuestra vida.
+    </p>
+
+    <p>
+    Cami, Yari y yo somos diferentes, y justamente esas
+    diferencias hacen que nuestra amistad tenga su propia
+    historia. Cada una tiene una manera distinta de pensar,
+    de sentir y de demostrar cariño.
+    </p>
+
+    <p>
+    No todo siempre ha sido perfecto. También hemos tenido
+    desacuerdos, momentos incómodos y situaciones que nos
+    han hecho pensar. Pero creo que cada experiencia nos
+    ha ayudado a conocernos mejor.
+    </p>
+
+    <p>
+    Para mí, lo bonito de una amistad no significa que nunca
+    existan problemas. Significa poder valorar los buenos
+    momentos, aprender de los malos y guardar con cariño
+    aquellas experiencias que vivimos juntas.
+    </p>
+
+</section>
+
+<!-- CONFIANZA -->
+
+<section>
+
+    <h2>?? La confianza que hemos construido</h2>
+
+    <p>
+    Con el tiempo, he aprendido que algunas personas llegan
+    a convertirse en parte importante de nuestros días.
+    Son aquellas con las que podemos hablar de cualquier
+    cosa, reírnos de una ocurrencia o simplemente pasar
+    un momento juntas.
+    </p>
+
+    <p>
+    Cami y Yari son dos personas que forman parte de mi
+    historia. Cada una tiene una personalidad diferente,
+    pero con las dos he compartido momentos que para mí
+    tienen un significado especial.
+    </p>
+
+    <p>
+    Para mí, cada conversación, cada risa y cada recuerdo
+    forma una pequeña parte de nuestra amistad. Tal vez
+    no todos los momentos sean perfectos, pero todos
+    forman parte de lo que hemos vivido.
+    </p>
+
+</section>
+
+<!-- APRENDIZAJES -->
+
+<section id="aprendizajes">
+
+    <h2>?? Amistades que dejan enseñanzas</h2>
+
+    <div class="recuerdo">
+
+        <h3>?? Aprender de las experiencias</h3>
+
+        <p>
+        A lo largo del tiempo también he tenido otras
+        compañeras con las que me he llevado muy bien.
+        Algunas amistades han sido bonitas y otras han
+        terminado por diferentes razones. Cada experiencia
+        me ha dejado algo que aprender.
+        </p>
+
+    </div>
+
+    <div class="recuerdo">
+
+        <h3>?? Las personas pueden cambiar</h3>
+
+        <p>
+        A veces creemos que conocemos completamente a una
+        persona y después descubrimos nuevas partes de ella.
+        Eso me ha enseñado a observar las acciones, valorar
+        la sinceridad y aprender a cuidar la confianza que
+        doy a los demás.
+        </p>
+
+    </div>
+
+    <div class="recuerdo">
+
+        <h3>?? Valorar las amistades sinceras</h3>
+
+        <p>
+        Yo creo que no todas las amistades tienen que ser
+        perfectas. Lo importante es compartir con personas
+        que nos respeten, nos escuchen y nos permitan ser
+        nosotras mismas. Por eso valoro los momentos que
+        he vivido junto a Cami y Yari.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- GALERÍA -->
+
+<section id="fotos">
+
+    <h2>?? Nuestros recuerdos</h2>
+
+    <p style="text-align:center;">
+        Aquí guardaré algunas fotos bonitas de Cami,
+        Yari y yo, para recordar los momentos que hemos
+        compartido. ??
+    </p>
+
+    <div class="galeria">
+
+        <div class="foto-card">
+
+            <div class="foto">
+                <p>?? Foto de las tres juntas</p> <img src="foto1.jpeg" alt="Foto de las tres juntas" " style="width: 3cm; height: 4cm; object-fit: cover;">
+            </div>
+           
+
+
+            <h3>?? nuestro primer recuerdo</h3>
+       
+        </div>
+
+        <div class="foto-card">
+            <div class="foto">
+                <p>?? momentos felices</p><img src="foto2.jpeg" alt="momentos felices" " style="width: 3cm; height: 4cm; object-fit: cover;">
+            </div>
+            
+
+
+            <h3>?? una aventuras juntas</h3>
+        
+        </div>
+
+        <div class="foto-card">
+
+            <div class="foto">
+                <p>??otra foto especial</p> <img src="foto3.jpeg" alt="otra foto esoecial" " style="width: 3cm; height: 4cm; object-fit: cover;">
+            </div>
+           
+
+            <h3>?? Nuestras aventuras</h3>
+        
+        </div>
+
+        <div class="foto-card">
+
+            <div class="foto">
+                <p>?? Más recuerdos</p><img src="foto4.jpeg" alt="Más recuerdos" " style="width: 3cm; height: 4cm; object-fit: cover;">
+            </div>
+            
+
+            <h3>?? Recuerdos para siempre</h3>
+          
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- VIDEOS -->
+
+<section id="videos">
+
+    <h2>?? Momentos juntas</h2>
+
+    <div class="videos">
+
+        <div class="video-card">
+
+            <div class="foto">
+                <p>?? Aquí puedo colocar un video de nosotras</p>
+            </div>
+
+            <h3>?? Nuestros momentos especiales</h3>
+
+        </div>
+
+        <div class="video-card">
+
+            <div class="foto">
+                <p>?? Aquí irá otro video</p>
+            </div>
+
+            <h3>?? Más recuerdos</h3>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FRASES -->
+
+<section id="frases">
+
+    <h2>?? Palabras bonitas</h2>
+
+    <div class="frase">
+        “Una amistad verdadera se construye con confianza,
+        respeto, risas y muchos recuerdos.” ??
+    </div>
+
+    <div class="frase">
+        “No necesitamos ser perfectas para compartir
+        momentos que nos hagan felices.” ??
+    </div>
+
+    <div class="frase">
+        “Las mejores historias se escriben con personas
+        que dejan una huella bonita en nuestro corazón.” ??
+    </div>
+
+    <div class="frase">
+        “Cami, Yari y yo: tres personalidades diferentes,
+        una historia y muchos recuerdos.” ??
+    </div>
+
+    <div class="frase">
+        “Que nunca nos falten las risas,
+        las conversaciones y los momentos especiales.” ??
+    </div>
+
+</section>
+
+<!-- DESPEDIDA -->
+
+<section>
+
+    <h2>?? Gracias por ser parte de mi historia</h2>
+
+    <p>
+    La vida está llena de personas que llegan para
+    enseñarnos, acompañarnos y compartir momentos.
+    Algunas se quedan durante mucho tiempo y otras
+    dejan recuerdos que siempre podemos guardar.
+    </p>
+
+    <p>
+    Esta página es mi pequeño recuerdo de una amistad
+    especial y de todas las experiencias que hemos vivido
+    durante nuestro bachillerato. Me alegra poder guardar
+    aquí una parte de nuestra historia.
+    </p>
+
+    <p style="text-align:center; font-size:20px;">
+        ?? Con cariño, Diana ??
+    </p>
+
+</section>
+
+<!-- PIE DE PÁGINA -->
+
+<footer>
+
+    <h2>?? 3DTS Bachillerato “B” ??</h2>
+
+    <p>
+        Cami • Yari • Diana
+    </p>
+
+    <p>
+        Una amistad llena de recuerdos y aprendizajes.
+    </p>
+
+    <p>
+        © 2026 - Nuestra historia de amistad
+    </p>
+
+</footer>
+
+</body>
+</html>
